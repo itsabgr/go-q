@@ -16,6 +16,7 @@ type Q struct {
 	tail  *item
 }
 
+//Push add value to tail of queue
 func (r *Q) Push(value interface{}) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
@@ -30,7 +31,9 @@ func (r *Q) push(value interface{}) {
 	pre.next = r.tail
 }
 
-func (r *Q) Peek() (interface{}, bool) {
+//Peek returns head item of queue without removing it.
+//if no item found returns nil,false
+func (r *Q) Peek() (value interface{}, found bool) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 	return r.Peek()
@@ -42,6 +45,9 @@ func (r *Q) peek() (interface{}, bool) {
 	value := r.head.value
 	return value, true
 }
+
+//Skip removes head item of queue.
+//returns false if no item found
 func (r *Q) Skip() bool {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
@@ -57,7 +63,10 @@ func (r *Q) skip() bool {
 	}
 	return true
 }
-func (r *Q) Pull() (interface{}, bool) {
+
+//Pull returns head item of queue and  remove it.
+//if no item found returns nil,false
+func (r *Q) Pull() (value interface{}, found bool) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 	return r.pull()
