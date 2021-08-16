@@ -24,6 +24,14 @@ func (r *Q) Push(value interface{}) {
 	r.push(value)
 }
 
+//Reset skip all items in queue
+func (r *Q) Reset() {
+	r.mutex.Lock()
+	defer r.mutex.Unlock()
+	r.head = nil
+	r.tail = nil
+}
+
 func (r *Q) push(value interface{}) {
 	pre := r.tail
 	r.tail = &item{
