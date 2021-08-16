@@ -10,6 +10,7 @@ type item struct {
 	next  *item
 }
 
+//Q is a thread-safe Queue
 type Q struct {
 	mutex sync.Mutex
 	head  *item
