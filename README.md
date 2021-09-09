@@ -6,3 +6,8 @@ a thread-safe (lock-free) queue for Go
 [![Go Report Card](https://goreportcard.com/badge/github.com/itsabgr/go-q)](https://goreportcard.com/report/github.com/itsabgr/go-q)
 [![Go](https://github.com/itsabgr/go-q/actions/workflows/go.yml/badge.svg?branch=master&event=push)](https://github.com/itsabgr/go-q/actions/workflows/go.yml)
 ![GitHub go.mod Go version (branch)](https://img.shields.io/github/go-mod/go-version/itsabgr/go-q/master)
+
+
+TODO
+
+- impl by generics
